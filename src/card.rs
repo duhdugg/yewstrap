@@ -1,5 +1,6 @@
 use yew::{
-    classes, function_component, html, use_state, AttrValue, Callback, Children, Html, NodeRef, Properties,
+    classes, function_component, html, use_state, AttrValue, Callback, Children, Html, NodeRef,
+    Properties,
 };
 
 #[derive(Properties, PartialEq)]

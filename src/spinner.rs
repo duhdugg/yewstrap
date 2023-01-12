@@ -1,7 +1,5 @@
-use yew::{
-    function_component, html, Children, Html, Properties,
-};
 use crate::join_styles;
+use yew::{function_component, html, Children, Html, Properties};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {

@@ -5,7 +5,7 @@ use yewstrap::navbar::{
     BrandProps as NavBarBrandProps, FixedTo as NavBarFixedTo, Props as NavBarProps,
 };
 use yewstrap::navitem::{Props as NavItemProps, SubMenuItemProps};
-use yewstrap::spinner::{Spinner, FlexDirection, SpinnerType};
+use yewstrap::spinner::{FlexDirection, Spinner, SpinnerType};
 
 #[function_component]
 fn App() -> Html {
