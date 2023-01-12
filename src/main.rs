@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yewstrap::alert::{Alert, Theme as AlertTheme};
 use yewstrap::appdiv::AppDiv;
-use yewstrap::card::Card;
+use yewstrap::card::{Card, Theme as CardTheme};
 use yewstrap::navbar::{
     BrandProps as NavBarBrandProps, FixedTo as NavBarFixedTo, Props as NavBarProps,
 };
@@ -101,8 +101,7 @@ fn App() -> Html {
                 <button onclick={onclick()} class="btn btn-primary">{ "Click" }</button>
             </div>
             <div class="row mt-3">
-                <Card>
-                    <h2>{ "Spinners" }</h2>
+                <Card header={ html! { <h2 class="mb-0">{ "Spinners" }</h2> } } header_theme={CardTheme::Dark}>
                     <Spinner
                         flex_direction={FlexDirection::Row}
                         size={1.333}
@@ -122,8 +121,7 @@ fn App() -> Html {
                 </Card>
             </div>
             <div class="row mt-3">
-                <Card>
-                    <h2>{ "Alerts" }</h2>
+                <Card header={ html! { <h2 class="mb-0">{ "Alerts" }</h2> } } header_theme={CardTheme::Dark}>
                     <Alert>{ "info / default" }</Alert>
                     <Alert theme={AlertTheme::Primary}>{ "primary" }</Alert>
                     <Alert theme={AlertTheme::Success}
@@ -170,6 +168,76 @@ fn App() -> Html {
                             xxl: None,
                         }))}>{ "1/2 column at lg breakpoint, 3/4 column at md breakpoint (try resizing the window, or inspect this element to see that it's using `col-md-9` and `col-lg-6`." }</Alert>
                     </div>
+                </Card>
+            </div>
+            <div class="row mt-3">
+                <Card header={ html!{ <h2 class="mb-0">{ "Cards" }</h2> } } header_theme={CardTheme::Dark}>
+                    <Card
+                        header={html! { <span>{ "Outer Card" }</span> }}
+                        header_theme={CardTheme::Warning}
+                    >
+                        <div class="row">
+                            <Card>{ "\"Here is my card.\"" }</Card>
+                        </div>
+                        <div class="row mt-3">
+                            <Card
+                                column=true
+                                header={html! { <span>{ "Here is a themed card with a header" }</span> }}
+                                theme={CardTheme::Dark} />
+                            <Card
+                                column=true
+                                header={html! { <span>{ "This one has a red head" }</span> }}
+                                header_theme={CardTheme::Danger} />
+                            <Card
+                                column=true
+                                header={html! { <span>{ "This one has a blue head" }</span> }}
+                                header_theme={CardTheme::Primary}>
+                                <h4 className="display-4">{ "Woo!" }</h4>
+                            </Card>
+                            <Card
+                                column=true
+                                body_theme={CardTheme::Indigo}
+                                body_gradient=true
+                                header={html! { <span>{ "This one has a green gradient head" }</span> }}
+                                header_gradient=true
+                                header_theme={CardTheme::Success}>
+                                { "with an indigo gradient body" }
+                            </Card>
+                        </div>
+                        <div class="row mt-3">
+                            <Card
+                                column=true
+                                theme={CardTheme::Dark}
+                                header={html! { <span>{ "This one has a yellow head" }</span> }}
+                                header_theme={CardTheme::Warning}>
+                                { "And a dark body and border!" }
+                            </Card>
+                            <Card
+                                column=true
+                                theme={CardTheme::Light}
+                                header={html! { <span>{ "This one is light" }</span> }}
+                                width={ColumnWidth::Auto}>
+                                { "And automatically grows in width." }
+                            </Card>
+                            <Card
+                                column=true
+                                header_theme={CardTheme::Dark}
+                                body_theme={CardTheme::Danger}
+                                footer_theme={CardTheme::Dark}
+                                header={html! { <span>{ "and" }</span> }}
+                                footer={html! { <span>{ "has a footer" }</span> }}
+                                width={ColumnWidth::ByBreakpoint(Box::new(BreakpointWidths {
+                                    xs: None,
+                                    sm: Some(ColumnWidth::FromF32(2.0 / 3.0)),
+                                    md: Some(ColumnWidth::FromF32(1.0 / 4.0)),
+                                    lg: None,
+                                    xl: None,
+                                    xxl: None,
+                                }))}>
+                                { "this one" }
+                            </Card>
+                        </div>
+                    </Card>
                 </Card>
             </div>
         </AppDiv>

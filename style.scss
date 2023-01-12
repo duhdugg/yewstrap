@@ -3,3 +3,40 @@
     margin-top: 4rem;
   }
 }
+
+.yewstrap-theme-danger {
+  background-color: var(--bs-danger);
+  color: var(--bs-light);
+}
+.yewstrap-theme-dark {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+.yewstrap-theme-indigo {
+  background-color: var(--bs-indigo);
+  color: var(--bs-light);
+}
+.yewstrap-theme-info {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+}
+.yewstrap-theme-light {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+}
+.yewstrap-theme-primary {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+.yewstrap-theme-secondary {
+  background-color: var(--bs-secondary);
+  color: var(--bs-light);
+}
+.yewstrap-theme-success {
+  background-color: var(--bs-success);
+  color: var(--bs-light);
+}
+.yewstrap-theme-warning {
+  background-color: var(--bs-warning);
+  color: var(--bs-dark);
+}
