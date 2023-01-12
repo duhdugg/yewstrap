@@ -92,7 +92,7 @@ fn App() -> Html {
                 <h1>{&*greeting}</h1>
             }}
             footer={html! {
-                <p class="pt-3">{ "Copyright Doug Elkin © 2022. All rights reserved." }</p>
+                <p class="pt-3">{ "Copyright Doug Elkin © 2022-2023. All rights reserved." }</p>
             }}
         >
             <div class="btn-group">
