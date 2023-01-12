@@ -1,3 +1,4 @@
+pub mod alert;
 pub mod appdiv;
 pub mod card;
 pub mod navbar;
