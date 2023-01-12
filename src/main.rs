@@ -11,6 +11,7 @@ use yewstrap::spinner::{Spinner, FlexDirection, SpinnerType};
 fn App() -> Html {
     let greeting = use_state(|| AttrValue::from("Hello, world!"));
     let active_navitem = use_state(|| 0);
+    let foo_bravo_toggler = use_state(|| false);
     let onclick = || {
         let greeting = greeting.clone();
         Callback::from(move |_| greeting.set(AttrValue::from(format!("{}!", *greeting))))
@@ -61,12 +62,23 @@ fn App() -> Html {
                                             })
                                         }},
                                         yew::props! { SubMenuItemProps {
-                                            child: html! { <span>{i}{"-Bravo"}</span> },
+                                            child: html! { <span>
+                                                <input type="checkbox" readonly=true
+                                                    checked={*foo_bravo_toggler}
+                                                    style="cursor:pointer" />
+                                                {" "}{i}{"-Bravo"}</span> },
                                             do_not_collapse: true,
-                                            onclick: Callback::from(|e: yew::MouseEvent| {
-                                                e.prevent_default();
-                                                log::debug!("Bravo");
-                                            })
+                                            onclick: {
+                                                let foo_bravo_toggler =
+                                                    foo_bravo_toggler.clone();
+                                                Callback::from(move |e: yew::MouseEvent|
+                                                {
+                                                    e.prevent_default();
+                                                    log::debug!("Bravo");
+                                                    foo_bravo_toggler.set(
+                                                        !*foo_bravo_toggler);
+                                                })
+                                            }
                                         }}
                                     ])
                                 },
