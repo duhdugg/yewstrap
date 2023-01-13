@@ -2,6 +2,7 @@ use yew::prelude::*;
 use yewstrap::alert::{Alert, Theme as AlertTheme};
 use yewstrap::appdiv::AppDiv;
 use yewstrap::card::{Card, Theme as CardTheme};
+use yewstrap::modal::{Modal, Theme as ModalTheme};
 use yewstrap::navbar::{
     BrandProps as NavBarBrandProps, FixedTo as NavBarFixedTo, Props as NavBarProps,
 };
@@ -14,7 +15,8 @@ fn App() -> Html {
     let greeting = use_state(|| AttrValue::from("Hello, world!"));
     let active_navitem = use_state(|| 0);
     let foo_bravo_toggler = use_state(|| false);
-    let onclick = || {
+    let show_modal = use_state(|| false);
+    let greeting_onclick = || {
         let greeting = greeting.clone();
         Callback::from(move |_| greeting.set(AttrValue::from(format!("{}!", *greeting))))
     };
@@ -98,7 +100,7 @@ fn App() -> Html {
             }}
         >
             <div class="btn-group">
-                <button onclick={onclick()} class="btn btn-primary">{ "Click" }</button>
+                <button onclick={greeting_onclick()} class="btn btn-primary">{ "Click" }</button>
             </div>
             <div class="row mt-3">
                 <Card header={ html! { <h2 class="mb-0">{ "Spinners" }</h2> } } header_theme={CardTheme::Dark}>
@@ -262,6 +264,52 @@ fn App() -> Html {
                             </Card>
                         </div>
                     </Card>
+                </Card>
+            </div>
+            <div class="row mt-3">
+                <Card header={ html!{ <h2 class="mb-0">{ "Modals" }</h2> } } header_theme={CardTheme::Dark}>
+                    <Modal
+                        header_theme={ModalTheme::Indigo}
+                        header_gradient=true
+                        title={ html! { <span>{ "Modal Title" }</span> } }
+                        set_show={{
+                            let show_modal = show_modal.clone();
+                            move |show| show_modal.set(show)
+                        }}
+                        show={*show_modal}
+                        white_close_button=true
+                        footer={html! {
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    onclick={
+                                        let show_modal = show_modal.clone();
+                                        move |_| {
+                                            show_modal.set(false);
+                                        }
+                                    }
+                                >{ "Cancel" }</button>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    onclick={
+                                        let show_modal = show_modal.clone();
+                                        move |_| {
+                                            show_modal.set(false);
+                                        }
+                                    }
+                                >{ "Save" }</button>
+                            </div>
+                        }}
+                    >
+                        { "Modal content goes here" }
+                    </Modal>
+                    <button type="button" class="btn btn-primary btn-lg"
+                        onclick={move |_: yew::MouseEvent| show_modal.set(true)}
+                    >
+                        { "Show Modal" }
+                    </button>
                 </Card>
             </div>
         </AppDiv>

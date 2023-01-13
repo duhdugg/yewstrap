@@ -1,6 +1,7 @@
 pub mod alert;
 pub mod appdiv;
 pub mod card;
+pub mod modal;
 pub mod navbar;
 pub mod navitem;
 pub mod spinner;
@@ -102,5 +103,19 @@ impl BreakpointWidths {
             _ => {}
         }
         classes.join(" ")
+    }
+}
+
+pub fn get_document() -> Option<web_sys::Document> {
+    match web_sys::window() {
+        Some(window) => window.document(),
+        _ => None
+    }
+}
+
+pub fn get_body() -> Option<web_sys::HtmlElement> {
+    match get_document() {
+        Some(document) => document.body(),
+        _ => None
     }
 }
