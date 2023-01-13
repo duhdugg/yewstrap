@@ -119,29 +119,55 @@ pub fn Card(props: &Props) -> Html {
 
 #[derive(PartialEq)]
 pub enum Theme {
+    Black,
+    Blue,
+    Cyan,
     Danger,
     Dark,
+    Gray,
+    GrayDark,
+    Green,
     Indigo,
     Info,
     Light,
+    Orange,
+    Pink,
     Primary,
+    Purple,
+    Red,
     Secondary,
     Success,
+    Teal,
     Warning,
+    White,
+    Yellow,
 }
 
 impl Theme {
     pub fn to_string(&self) -> String {
         String::from(match &self {
+            Theme::Black => "yewstrap-theme-black",
+            Theme::Blue => "yewstrap-theme-blue",
+            Theme::Cyan => "yewstrap-theme-cyan",
             Theme::Danger => "yewstrap-theme-danger",
             Theme::Dark => "yewstrap-theme-dark",
+            Theme::Gray => "yewstrap-theme-gray",
+            Theme::GrayDark => "yewstrap-theme-gray-dark",
+            Theme::Green => "yewstrap-theme-green",
             Theme::Indigo => "yewstrap-theme-indigo",
             Theme::Info => "yewstrap-theme-info",
             Theme::Light => "yewstrap-theme-light",
+            Theme::Orange => "yewstrap-theme-orange",
+            Theme::Pink => "yewstrap-theme-pink",
             Theme::Primary => "yewstrap-theme-primary",
+            Theme::Purple => "yewstrap-theme-purple",
+            Theme::Red => "yewstrap-theme-red",
             Theme::Secondary => "yewstrap-theme-secondary",
             Theme::Success => "yewstrap-theme-success",
+            Theme::Teal => "yewstrap-theme-teal",
             Theme::Warning => "yewstrap-theme-warning",
+            Theme::White => "yewstrap-theme-white",
+            Theme::Yellow => "yewstrap-theme-yellow",
         })
     }
 }

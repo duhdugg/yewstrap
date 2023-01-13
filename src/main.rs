@@ -180,6 +180,30 @@ fn App() -> Html {
                             <Card>{ "\"Here is my card.\"" }</Card>
                         </div>
                         <div class="row mt-3">
+                            <Card class="mt-3" column=true theme={CardTheme::Black}>{ "black theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Blue}>{ "blue theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Cyan}>{ "cyan theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Danger}>{ "danger theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Dark}>{ "dark theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Gray}>{ "gray theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::GrayDark}>{ "gray dark theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Green}>{ "green theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Indigo}>{ "indigo theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Info}>{ "info theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Light}>{ "light theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Orange}>{ "orange theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Pink}>{ "pink theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Primary}>{ "primary theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Purple}>{ "purple theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Red}>{ "red theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Secondary}>{ "secondary theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Success}>{ "success theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Teal}>{ "teal theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Warning}>{ "warning theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::White}>{ "white theme" }</Card>
+                            <Card class="mt-3" column=true theme={CardTheme::Yellow}>{ "yellow theme" }</Card>
+                        </div>
+                        <div class="row mt-3">
                             <Card
                                 column=true
                                 header={html! { <span>{ "Here is a themed card with a header" }</span> }}

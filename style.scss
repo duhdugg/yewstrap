@@ -4,12 +4,36 @@
   }
 }
 
+.yewstrap-theme-black {
+  background-color: var(--bs-black);
+  color: var(--bs-light);
+}
+.yewstrap-theme-blue {
+  background-color: var(--bs-blue);
+  color: var(--bs-light);
+}
+.yewstrap-theme-cyan {
+  background-color: var(--bs-cyan);
+  color: var(--bs-dark);
+}
 .yewstrap-theme-danger {
   background-color: var(--bs-danger);
   color: var(--bs-light);
 }
 .yewstrap-theme-dark {
   background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+.yewstrap-theme-gray {
+  background-color: var(--bs-gray);
+  color: var(--bs-light);
+}
+.yewstrap-theme-gray-dark {
+  background-color: var(--bs-gray-dark);
+  color: var(--bs-light);
+}
+.yewstrap-theme-green {
+  background-color: var(--bs-green);
   color: var(--bs-light);
 }
 .yewstrap-theme-indigo {
@@ -24,8 +48,24 @@
   background-color: var(--bs-light);
   color: var(--bs-dark);
 }
+.yewstrap-theme-orange {
+  background-color: var(--bs-orange);
+  color: var(--bs-dark);
+}
+.yewstrap-theme-pink {
+  background-color: var(--bs-pink);
+  color: var(--bs-light);
+}
 .yewstrap-theme-primary {
   background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+.yewstrap-theme-purple {
+  background-color: var(--bs-purple);
+  color: var(--bs-light);
+}
+.yewstrap-theme-red {
+  background-color: var(--bs-red);
   color: var(--bs-light);
 }
 .yewstrap-theme-secondary {
@@ -36,7 +76,19 @@
   background-color: var(--bs-success);
   color: var(--bs-light);
 }
+.yewstrap-theme-teal {
+  background-color: var(--bs-teal);
+  color: var(--bs-dark);
+}
 .yewstrap-theme-warning {
   background-color: var(--bs-warning);
+  color: var(--bs-dark);
+}
+.yewstrap-theme-white {
+  background-color: var(--bs-white);
+  color: var(--bs-dark);
+}
+.yewstrap-theme-yellow {
+  background-color: var(--bs-yellow);
   color: var(--bs-dark);
 }
